@@ -5,19 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Canvas for particle background -->
+    <canvas id="particleCanvas"></canvas>
+
     <div class="login-container">
+        <img src="img/tu-logo.png" width="110" height="100" alt="TU-Logo" class="img-fluid logo"> <!-- Logo at the top -->
         <h1>Login</h1>
         <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
             <button type="button" onclick="submitLogin()">Login</button>
         </form>
         <p id="message"></p>
     </div>
+
     <script src="js/script.js"></script>
+    <script src="js/particles.js"></script> <!-- Load particle animation script -->
 </body>
 </html>
