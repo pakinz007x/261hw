@@ -1,47 +1,119 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+canvas#particleCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place behind the login container */
+    background: linear-gradient(135deg, #ff7e5f, #ffab40); /* Orange gradient */
 }
 
 .login-container {
+    position: relative;
     width: 300px;
-    margin: 100px auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 10px;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    position: relative;
+    animation: bounceIn 1s ease;
 }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: #aaa;
 }
 
 input {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #ff5722;
     border: none;
+    border-radius: 5px;
     color: #fff;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #e64a19;
+    box-shadow: 0 0 15px #ff5722, 0 0 25px #ff5722;
 }
 
 #message {
     margin-top: 20px;
     text-align: center;
+    font-weight: bold;
 }
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.mouse-light {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    animation: fade-out 0.5s forwards;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
