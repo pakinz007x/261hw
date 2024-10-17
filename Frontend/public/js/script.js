@@ -36,16 +36,16 @@ function submitLogin() {
     .then(data => {
         if (data.status === true) {
             const popupMessage = `
-                <strong>สถานะ:</strong> ${data.status ? "สำเร็จ" : "ไม่สำเร็จ"}<br>
-                <strong>ประเภท:</strong> ${data.type}<br>
-                <strong>ชื่อผู้ใช้:</strong> ${data.username}<br>
-                <strong>สถานะที่ TU:</strong> ${data.tu_status}<br>
-                <strong>รหัสสถานะ:</strong> ${data.statusid}<br>
-                <strong>ชื่อภาษาไทย:</strong> ${data.displayname_th}<br>
-                <strong>ชื่อภาษาอังกฤษ:</strong> ${data.displayname_en}<br>
-                <strong>อีเมล:</strong> ${data.email}<br>
-                <strong>ภาควิชา:</strong> ${data.department}<br>
-                <strong>คณะ:</strong> ${data.faculty}
+                <strong>สถานะ :</strong> ${data.status ? "สำเร็จ" : "ไม่สำเร็จ"}<br>
+                <strong>ประเภท :</strong> ${data.type}<br>
+                <strong>ชื่อผู้ใช้ :</strong> ${data.username}<br>
+                <strong>สถานะที่ TU :</strong> ${data.tu_status}<br>
+                <strong>รหัสสถานะ :</strong> ${data.statusid}<br>
+                <strong>ชื่อภาษาไทย :</strong> ${data.displayname_th}<br>
+                <strong>ชื่อภาษาอังกฤษ :</strong> ${data.displayname_en}<br>
+                <strong>อีเมล :</strong> ${data.email}<br>
+                <strong>ภาควิชา :</strong> ${data.department}<br>
+                <strong>คณะ :</strong> ${data.faculty}
             `;
 
             document.getElementById('popup-message').innerHTML = popupMessage;
